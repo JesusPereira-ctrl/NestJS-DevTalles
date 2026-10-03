@@ -7,7 +7,7 @@ import {
 import { CreatePokemonDto } from './dto/create-pokemon.dto';
 import { UpdatePokemonDto } from './dto/update-pokemon.dto';
 import { isValidObjectId, Model } from 'mongoose';
-import { Pokemon } from './entities/pokemon.entity';
+import { Pokemon, PokemonDocument } from './entities/pokemon.entity';
 import { InjectModel } from '@nestjs/mongoose';
 
 @Injectable()
@@ -41,7 +41,7 @@ export class PokemonService {
   }
 
   async findOne(term: string) {
-    let pokemon: Pokemon | null = null;
+    let pokemon: PokemonDocument | null = null;
 
     if (!isNaN(+term)) {
       pokemon = await this.pokemonModel.findOne({ no: term });
@@ -68,8 +68,16 @@ export class PokemonService {
     return pokemon;
   }
 
-  update(id: number, updatePokemonDto: UpdatePokemonDto) {
-    return `This action updates a #${id} pokemon`;
+  async update(term: string, updatePokemonDto: UpdatePokemonDto) {
+    const pokemon = await this.findOne(term);
+
+    if (updatePokemonDto?.name) {
+      updatePokemonDto.name = updatePokemonDto.name.toLowerCase();
+    }
+
+    await pokemon.updateOne(updatePokemonDto);
+
+    return { ...pokemon.toJSON(), ...updatePokemonDto };
   }
 
   remove(id: number) {
