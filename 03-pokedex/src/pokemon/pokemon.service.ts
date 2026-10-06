@@ -23,6 +23,9 @@ export class PokemonService {
     private readonly configService: ConfigService,
   ) {
     this.defaultLimit = this.configService.get<number>('defaultLimit')!;
+    // console.log({
+    //   defaultLimit: this.configService.get<number>('defaultLimit')!,
+    // });
   }
 
   async create(createPokemonDto: CreatePokemonDto) {
