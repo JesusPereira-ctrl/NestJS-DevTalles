@@ -886,6 +886,13 @@
     jsonc-parser "3.3.1"
     pluralize "8.0.0"
 
+"@nestjs/serve-static@^12.0.0":
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/serve-static/-/serve-static-12.0.0.tgz#fa2056e76358d5cc47a39a1c0938cf0de341857d"
+  integrity sha512-3YsDpylQN90o5r7rIN2M5LQ3uK8WUJ8oSo0wH0SRrBb7X/FKD31vNY4J7cOlbRDZiX1kxDWyI8wSlygqj/57Yg==
+  dependencies:
+    path-to-regexp "8.4.2"
+
 "@nestjs/testing@^12.0.1":
   version "12.1.2"
   resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-12.1.2.tgz#478b20fe9bed0d5b55a4faef5f8f91d3fa108eb4"
@@ -1265,7 +1272,7 @@
     "@types/range-parser" "*"
     "@types/send" "*"
 
-"@types/express@^5.0.0":
+"@types/express@*", "@types/express@^5.0.0":
   version "5.0.6"
   resolved "https://registry.yarnpkg.com/@types/express/-/express-5.0.6.tgz#2d724b2c990dcb8c8444063f3580a903f6d500cc"
   integrity sha512-sKYVuV7Sv9fbPIt/442koC7+IIwK5olP1KWeD88e/idgoJqDm3JV/YUiPwkoKK92ylff2MGxSz1CSjsXelx0YA==
@@ -1310,6 +1317,13 @@
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/@types/methods/-/methods-1.1.4.tgz#d3b7ac30ac47c91054ea951ce9eed07b1051e547"
   integrity sha512-ymXWVrDiCxTBE3+RIrrP533E70eA+9qu7zdWoHuOmGujkYtzf4HQF96b8nwHLqhuf4ykX61IGRIB38CC6/sImQ==
+
+"@types/multer@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@types/multer/-/multer-2.3.0.tgz#a9458b01a0ee36a8d2e612795c8b5facfb8f538a"
+  integrity sha512-i7STIm9V4K2MPH4ZYMtrZAwNxs3kglk2LgleaTuB9pUXgADBcQYQuYMd7+6xgTIxfoggIkFA/DkkvycdZpIARA==
+  dependencies:
+    "@types/express" "*"
 
 "@types/node@*":
   version "26.6.4"
