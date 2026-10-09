@@ -62,5 +62,4 @@ pids
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 # Files uploads
-static/products/**
 static/uploads/**
